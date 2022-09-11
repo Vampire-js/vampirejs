@@ -2,7 +2,7 @@ function isObject (obj) {
     return typeof obj === 'object';
   }
   
-export function initializeState (obj , hook) {
+export function initializeState (obj , hook , methods) {
     const mapStore = {};
   
     return new Proxy(obj, {
@@ -12,7 +12,7 @@ export function initializeState (obj , hook) {
         if(mapStore[property] === true) return value;
         // if it's an non-proxied object, we return its proxy
         if(isObject(value)) {
-          const proxyValue = mapStore[property] || initializeState(value, hook);
+          const proxyValue = mapStore[property] || initializeState(value, hook , methods);
           mapStore[property] = proxyValue;
           return proxyValue;
         }
@@ -27,12 +27,14 @@ export function initializeState (obj , hook) {
         target[property] = newVal;
         mapStore[property] = true;
         hook();
+        methods()
         return true;
       },
       deleteProperty (target, propertty) {
         delete target[property];
         delete mapStore[property];
         hook();
+        methods()
         return true;
       }
     });

@@ -1,0 +1,19 @@
+{
+  "name": "@vampirejs/vampirejs",
+  "version": "1.0.0",
+  "description": "Vampirejs Library",
+  "main": "core.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vampire-js/vampirejs.git"
+  },
+  "author": "Vampirejs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vampire-js/vampirejs/issues"
+  },
+  "homepage": "https://github.com/Vampire-js/vampirejs#readme"
+}

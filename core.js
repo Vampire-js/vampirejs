@@ -1,5 +1,6 @@
-export const createApp = (ui , methods) => {
-    ui()
+export const createApp = (state , ui, methods) => {
+    document.getElementById("app").innerHTML = ui()
     methods()
     }
-    
+
+        
