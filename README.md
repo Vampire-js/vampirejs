@@ -72,8 +72,9 @@ And that's it!
 ## initializeState
 - By default, a Vampirejs component isn't having reactive state out of the box. Hence , the ```initializeState``` helper function provided by Vampirejs is used inorder to get some dynamic state into the game
 
+##  What about state management ?!
+- Vampirejs doesn't require any state management library, as the inbuilt ```initializeState``` function can be exported from one component to other inorder to share state. Which means props passed from one component to other are already enabled with 2-way binding :fire:
+
 ## Upcoming Features
     @vampirejs/router
-    @vampirejs/animations
-    @vampirejs/gestures
-    @vampirejs/mobile
+    Better Templating i.e. elimination of .innerHTML 
